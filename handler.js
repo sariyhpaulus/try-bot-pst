@@ -1,37 +1,6 @@
 const fs = require("fs");
 const { ss } = require("chatbot/ss");
 
-// async function daftar(conn, msg, args) {
-//   if (!args) {
-//     conn.sendMessage(msg.key.remoteJid, {
-//       text: `ketik *!panduan* untuk panduan secara umum\nketik *!info #pendaftaran* untuk pendaftaran siswa baru`,
-//     });
-//     return;
-//   }
-//   var noHP = msg.key.remoteJid.split("@")[0];
-//   var data = [noHP];
-//   data = data.concat(args);
-//   let user = await ss.getRows("users!a2:c");
-//   let duplikat;
-//   if (user) {
-//     await user.forEach((usr) => {
-//       if (usr[0] == noHP) {
-//         duplikat = [usr[1], noHP];
-//       }
-//     });
-//   }
-//   if (!duplikat) {
-//     ss.addData("users!$a:c", data);
-//     conn.sendMessage(msg.key.remoteJid, {
-//       text: `terima kasih! ${args[0]} telah terdaftar di sistem kami dengan no hp: ${noHP}.`,
-//     });
-//   } else {
-//     conn.sendMessage(msg.key.remoteJid, {
-//       text: `mohon maaf! no ${noHP} telah digunakan oleh ${duplikat[0]}.`,
-//     });
-//   }
-// }
-
 module.exports = {
   async input(conn, msg, sheet, data) {
     if (!sheet || !data) return;
@@ -99,9 +68,12 @@ module.exports = {
       }
     }
   },
+
+  // explain this function in the next section
   async panduan(conn, msg, ...tmp) {
+    
     tmp = await tmp[2].map(
-      (t) => "ketik :*" + t[0] + "* \n" + t[2] + "\n_____________"
+      (t) => "ketik :*" + t[0] + "* \n"
     );
     tmp = await tmp.join("\n");
     let pesan =
@@ -109,4 +81,5 @@ module.exports = {
       tmp;
     conn.sendMessage(msg.key.remoteJid, { text: pesan });
   },
+
 };
