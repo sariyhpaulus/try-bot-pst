@@ -1,12 +1,18 @@
 const handler = require("../handler.js");
 const helper = require("../chatbot/helper");
 const config = require("../config/config.json");
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require("@whiskeysockets/baileys");
+const { 
+    default: makeWASocket, 
+    useMultiFileAuthState, 
+    DisconnectReason 
+    } = require("@whiskeysockets/baileys");
 const P = require("pino");
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
 const { termBot } = require("../lib/terminal.js");
 require("dotenv").config();
+
+const { VercelRequest, VercelResponse } = require('@vercel/node');
 
 async function connectToWhatsApp() {
   const { state, saveCreds } = await useMultiFileAuthState('./sessions');
