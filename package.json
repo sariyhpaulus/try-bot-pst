@@ -2,9 +2,8 @@
   "name": "chatbot",
   "version": "1.0.0",
   "description": "whatsapp chatbot by Ngaji Ngoding",
-  "main": "api/bot.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
     "dev terminal": "nodemon index1.js terminalbot",
     "bot": "node index.js",
     "bot terminal": "node index.js terminalbot",
@@ -30,7 +29,6 @@
   },
   "homepage": "https://github.com/Fathb/chatbot#readme",
   "dependencies": {
-    "@vercel/node": "^3.2.7",
     "@whiskeysockets/baileys": "^6.7.5",
     "googleapis": "^91.0.0",
     "node-fetch": "^2.6.7",
