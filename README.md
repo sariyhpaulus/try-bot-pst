@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # chatbot whit spreadsheet
 
 Script bot wa input data ke google spreadsheet
@@ -86,3 +87,6 @@ npm run "bot terminal"
 - [Buat Ngopi](https://saweria.co/fathb)
 
 - [donate pake Dana](https://link.dana.id/qr/35gzimg9)
+=======
+# try-bot-pst
+>>>>>>> origin/main
