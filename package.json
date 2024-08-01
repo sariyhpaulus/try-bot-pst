@@ -2,7 +2,7 @@
   "name": "chatbot",
   "version": "1.0.0",
   "description": "whatsapp chatbot by Ngaji Ngoding",
-  "main": "index.js",
+  "main": "api/bot.js",
   "scripts": {
     "dev terminal": "nodemon index1.js terminalbot",
     "bot": "node index.js",
